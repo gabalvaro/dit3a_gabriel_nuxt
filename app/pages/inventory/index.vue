@@ -14,6 +14,16 @@
       ></v-text-field>
     </template>
 
+    <v-select
+  clearable
+  label="Select Category"
+  :items="category.data"
+  variant ="outlined"
+  item-title="category_name"
+  item-value="id"
+  class="mx-4"
+></v-select>
+
     <v-data-table
       :headers="headers"
       :items="inventory.data"
@@ -21,23 +31,27 @@
     ></v-data-table>
   </v-card>
 </template>
-<script setup>  
+ <script setup>
+    const { data: inventory } = await useFetch('http://localhost:1337/api/inventories?populate=category');
+
+    const { data: category} = await useFetch('http://localhost:1337/api/categories');
+
+    
 
 
-  const { data: inventory } = await useFetch('http://localhost:1337/api/inventories');
 
   const search = ref('')
   const headers = [
-    {key: 'product_name', title: 'product name'},
+ 
+
+    { key: 'product_name', title: 'product_name' },
     { key: 'product_description', title: 'Description' },
     { key: 'quantity', title: 'quantity' },
-    { key : 'condition', title : 'condition'},
-    { key : 'location', title : 'location'},
-    { key : 'createdAt', title : 'Date created'},
-
-
+    { key: 'unit', title: 'unit' },
+    { key: 'condition', title:'condition' },
+     { key: 'location', title:'location' },
+    { key: 'acquisition_date', title:'acquisition_date'},
   ]
-  const desserts = [
-    
-  ]
+
+  
 </script>

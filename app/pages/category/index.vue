@@ -22,18 +22,21 @@
   </v-card>
 </template>
 <script setup>
-  import { ref } from 'vue'
+ const { data: category} = await useFetch('http://localhost:1337/api/categories');
 
-  const { data: category } = await useFetch('http://localhost:1337/api/categories');
+ const { data: inventory } = await useFetch('http://localhost:1337/api/inventories');
+
+ 
+ 
 
   const search = ref('')
   const headers = [
-    {key: 'category name', title: 'Category'},
+ 
+    { key: 'category_id', title: 'Category_id' },
+    { key: 'category_name', title: 'Category_name' },
     { key: 'description', title: 'Description' },
-    { key: 'createdAt', title: 'Date Created' },
-
+    { key: 'date_created', title: 'date_created' },
   ]
-  const desserts = [
-    
-  ]
+ 
+  
 </script>
