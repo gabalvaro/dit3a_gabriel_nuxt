@@ -20,6 +20,7 @@
       :search="search"
     ></v-data-table>
   </v-card>
+  
 </template>
 <script setup>
  const { data: category} = await useFetch('http://localhost:1337/api/categories');
@@ -32,10 +33,8 @@
   const search = ref('')
   const headers = [
  
-    { key: 'category_id', title: 'Category_id' },
     { key: 'category_name', title: 'Category_name' },
     { key: 'description', title: 'Description' },
-    { key: 'date_created', title: 'date_created' },
   ]
  
   

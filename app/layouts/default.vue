@@ -15,10 +15,11 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-          <v-list-item to="/" prepend-icon="mdi mdi-view-dashboard" title="Dashboard" value="myfiles"></v-list-item>
+          <v-list-item to="/dashboard" prepend-icon="mdi mdi-view-dashboard" title="Dashboard" value="myfiles"></v-list-item>
           <v-list-item to="inventory" prepend-icon="mdi-account-multiple" title="Inventory" value="shared"></v-list-item>
           <v-list-item to="Category" prepend-icon="mdi mdi-shape-plus" title="Category" value="starred"></v-list-item>
           <v-list-item to="user" prepend-icon="mdi mdi-shape-plus" title="User" value="starred"></v-list-item>
+          <v-list-item to="/" prepend-icon="mdi mdi-shape-plus" title="Log out" value="starred"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 
